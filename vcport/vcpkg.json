@@ -1,0 +1,12 @@
+{
+  "name": "PT_PORT_NAME",
+  "version": "0.1.0",
+  "homepage": "https://github.com/PT_USER_NAME/PT_PORT_NAME",
+  "description": "The PT_PORT_NAME is a port of vcpkg",
+  "dependencies": [
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    }
+  ]
+}
