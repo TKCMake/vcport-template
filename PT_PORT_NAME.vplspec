@@ -1,0 +1,27 @@
+#!/usr/bin/ruby
+
+# frozen_string_literal: true
+
+VPL::Spec.new do |v|
+  v.name = 'PT_PORT_NAME'
+  v.version = '0.1.0'
+  v.user = 'ZhengXianda'
+  v.homepage = "https://github.com/#{v.user}/#{v.name}"
+  v.description = "The #{v.name} is a port of vcpkg"
+
+  v.disturl = "https://github.com/#{v.user}/#{v.name}/releases/download/#{v.version}/#{v.name}-#{v.version}.zip"
+
+  v.sources = [
+    'include/**/*',
+    'src/**/*',
+    'CMakeLists.txt',
+    'LICENSE'
+  ]
+
+  v.dependencies = [
+    {
+      'name': 'vcpkg-cmake',
+      'host': true
+    }
+  ]
+end

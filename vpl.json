@@ -1,8 +1,0 @@
-{
-  "source_files": [
-    "include/**/*",
-    "src/**/*",
-    "CMakeLists.txt",
-    "LICENSE"
-  ]
-}
