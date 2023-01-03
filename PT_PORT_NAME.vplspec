@@ -12,16 +12,9 @@ VPL::Spec.new do |v|
   v.disturl = "https://github.com/#{v.user}/#{v.name}/releases/download/#{v.version}/#{v.name}-#{v.version}.zip"
 
   v.sources = [
-    'include/**/*',
-    'src/**/*',
+    'lib/**/*',
+    'cmake/**/*',
     'CMakeLists.txt',
     'LICENSE'
-  ]
-
-  v.dependencies = [
-    {
-      'name': 'vcpkg-cmake',
-      'host': true
-    }
   ]
 end

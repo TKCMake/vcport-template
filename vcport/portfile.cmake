@@ -36,7 +36,7 @@
 #  vcpkg_from_bitbucket
 #  vcpkg_from_sourceforge
 vcpkg_download_distfile(ARCHIVE
-    URLS "https://github.com/PT_USER_NAME/PT_PORT_NAME/archive/refs/tags/0.1.0.zip"
+    URLS "https://github.com/PT_USER_NAME/PT_PORT_NAME/releases/download/0.1.0/PT_PORT_NAME-0.1.0.zip"
     FILENAME "PT_PORT_NAME-0.1.0.zip"
     SHA512 0
 )
@@ -44,6 +44,7 @@ vcpkg_download_distfile(ARCHIVE
 vcpkg_extract_source_archive_ex(
     OUT_SOURCE_PATH SOURCE_PATH
     ARCHIVE "${ARCHIVE}"
+    NO_REMOVE_ONE_LEVEL
     # (Optional) A friendly name to use instead of the filename of the archive (e.g.: a version number or tag).
     # REF 1.0.0
     # (Optional) Read the docs for how to generate patches at:
@@ -78,7 +79,9 @@ vcpkg_cmake_install()
 #    "name": "vcpkg-cmake-config",
 #    "host": true
 #}
-# vcpkg_cmake_config_fixup()
+vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/PT_PORT_NAME)
+
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 
 # Uncomment the line below if necessary to install the license file for the port
 # as a file named `copyright` to the directory `${CURRENT_PACKAGES_DIR}/share/${PORT}`
